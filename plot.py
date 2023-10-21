@@ -58,7 +58,14 @@ for fname in files:
         continue
     x = data[:,0]
     y = data[:,1]
+
     
+    # Find the scaling factor
+    scaling_factor = 1.0 / y[0]
+    # Scale y data
+    y = y * scaling_factor
+
+
     # Add the name of each file we will process to a list
     if output: data_fnames.append(fname)
 
